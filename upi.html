@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106596218-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments) };
+        gtag('js', new Date());
+
+        gtag('config', 'UA-106596218-1');
+    </script>
+    <meta charset="UTF-8">
+    <title>UPI Payment</title>
+    <style>
+        #render {
+            text-align: center;
+        }
+
+        .question {
+            background: #e2e2e2;
+            padding: 6px;
+            margin-bottom: 13px;
+        }
+
+        .question p:first-child {
+            font-weight: bold;
+        }
+
+        .group {
+            padding: 10px;
+        }
+
+        .sidetext {
+            float: left;
+            margin-right: 26px;
+            font-size: 29px;
+            width: 200px;
+            color: #757474;
+            margin-top: 8px;
+        }
+
+        input {
+            font-size: 26px;
+            padding: 7px;
+            width: 300px;
+        }
+
+        #generated {
+            width: 100%;
+            background: grey;
+            padding: 20px;
+            color: aquamarine;
+            font-size: medium;
+            line-height: 1.5;
+            font-family: Courier;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=1870575853268673";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    <h1>UPI Payment.</h1>
+    <div>
+        <div class="group">
+            <div class="sidetext">Button Text</div>
+            <input id="buttontext" type="text" value="Pay using UPI">
+
+        </div>
+        <div class="group">
+            <div class="sidetext">Name</div>
+            <input id="vpaname" type="text" value="Narendra Sisodiya">
+        </div>
+        <div class="group">
+            <div class="sidetext">UPI Id</div>
+            <input id="vpa" type="text" value="9891341086@upi">
+        </div>
+    </div>
+
+    <h1>Button Design</h1>
+    <div id="render"><a href="upi://pay?pa=9891341086@upi&pn=NARENDRA SISODIYA&cu=INR" id="__UPI_BUTTON__"
+            style="background: #ff912f;border: 2px solid #8a4100;padding: 10px;text-decoration: none;color: white;font-size: larger;border-radius: 10px;">Pay
+            Using UPI</a></div>
+
+    <!-- <h1>Button Code</h1>
+    <div id="generated">--</div>
+
+    <h1>FAQ</h1> -->
+    <!-- <div class="question">
+        <p>Q - Where you can use this button?</p>
+        <p>A - In your mobile website where you want to accept UPI Payments.</p>
+    </div>
+
+    <div class="question">
+        <p>Q - What happen when we click the button?</p>
+        <p>A - When customer clicks the button, it will open BHIM or anyother UPI app. You can pay using UPI app.</p>
+    </div>
+
+    <div class="question">
+        <p>Q - Can I use this button for donation buttons?</p>
+        <p>A - Yes.</p>
+    </div>
+
+    <div class="question">
+        <p>Q - Can I use this button on my shopping kart?</p>
+        <p>A - No. Shopping kart need database level integration where payment status needed to be tracked from Payment
+            Gateway or Bank Server.</p>
+        <p>You can contact us or other payment gateway for UPI integration to your shopping kart or similar website</p>
+        <p>Email - narendra@billexo.com</p>
+    </div>
+    <div class="question">
+        <p>Q - Where i can find more about this technology?</p>
+        <p>A - <a
+                href="http://www.npci.org.in/documents/UPI-Linking-Specs-ver-1.1_draft.pdf">UPI-Linking-Specs-ver-1.1_draft.pdf</a>
+        </p>
+    </div>
+
+    <div class="question">
+        <p>Q - Why this page looks ugly?</p>
+        <p>A - I am lazy when it comes to CSS. Source code is available at github. Send me a PR. <a
+                href="https://github.com/billexo/UPI-Button">https://github.com/billexo/UPI-Button</a></p>
+    </div>
+    <h1>Contact</h1>
+    <div>
+        <p>Narendra Sisodiya</p>
+        <p><a href="mailto:narendra@billexo.com?subject=Regrading UPI Button">narendra@billexo.com</a></p>
+    </div>
+
+    <script>
+        //Now, Page is loaded. Copy rendered button into pre-tag
+        function htmlEntities(str) {
+            return String(str).replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        function generateFullCode() {
+            var buttontext = document.getElementById("buttontext").value;
+            var vpa = document.getElementById("vpa").value;
+            var vpaname = document.getElementById("vpaname").value.toUpperCase();
+            var url = "upi://pay?pa=" + vpa + "&pn=" + vpaname + "&cu=INR";
+
+            var abutton = document.getElementById("__UPI_BUTTON__");
+            abutton.setAttribute("href", url);
+            abutton.innerText = buttontext;
+
+            var code = document.getElementById("render").innerHTML;
+            document.getElementById("generated").innerHTML = htmlEntities(code);
+        }
+
+        //Bind KeyUp Event
+        document.getElementById("buttontext").addEventListener('keyup', function () {
+            generateFullCode();
+        });
+        document.getElementById("vpa").addEventListener('keyup', function () {
+            generateFullCode();
+        });
+        document.getElementById("vpaname").addEventListener('keyup', function () {
+            generateFullCode();
+        });
+        generateFullCode();
+    </script>
+    <div class="fb-comments" data-href="https://billexo.github.io/UPI-Button/" data-numposts="10"></div> -->
+</body>
+
+</html>
